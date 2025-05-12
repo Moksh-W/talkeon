@@ -1,0 +1,47 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { isInSpanish } from '@/actions/isInCourse';
+import { useUser } from "@clerk/nextjs";
+import { Nunito_Sans } from "next/font/google";
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+});
+
+export default function SpanishLearn() {
+  const router = useRouter();
+  const { user } = useUser(); // Use useUser() as a regular hook, no need for 'await'
+
+  useEffect(() => {
+    if (user) {
+
+    const checkEnrollment = async () => {
+      const enrolled = await isInSpanish(user.id);
+      if (!enrolled) {
+        router.push('/');  // Redirect to home if not enrolled
+      }
+    };
+
+    checkEnrollment();
+
+    }
+    else{
+        console.log(user)
+    }
+  }, [user, router]);  // Re-run when user or router changes
+
+  return (
+    <div className={`bg-[url('/darkback2.png')] bg-center min-h-screen flex flex-col items-center py-8 ${nunitoSans.className}`}>
+      <div className="relative flex flex-col items-center justify-center p-10 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-full">
+      <h1 className="font-deluxe text-[#ffffff] text-4xl" style={{ textShadow: "0 2px 0 #fbdb2b" }}>
+        SHOP
+      </h1>
+      </div>
+      <h1 className="py-8">You are not enrolled in any courses</h1>
+      {/* Course content goes here */}
+       <h1> {user!.firstName} </h1> 
+    </div>
+  );
+}
