@@ -92,17 +92,17 @@ export default function SpanishPlanPage() {
   // ---------------------------------------------------------------------
 
   return (
-    <div className="min-h-screen bg-[url('/back2.png')] bg-cover bg-center p-8 text-gray-800">
+    <div className="min-h-screen bg-[url('/darkback2.png')] bg-cover bg-center p-8 text-gray-800">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-white mb-2">Spanish Course Plan</h1>
-        <p className="text-white">
-          Current Progress: Unit {courseData.unit}, Lesson {courseData.lesson}
+        <h1 style={{color: "#ffffff", textShadow: "0 2px 0 #fbdb2b"}} className="text-4xl font-bold text-white mb-2 font-deluxe uppercase">Spanish Course Plan</h1>
+        <p style={{color: "#ffffff", textShadow: "0 1px 0 #fbdb2b"}} className="text-white font-refrigerator">
+          Current Progress: Unit {courseData.unit} - Lesson {courseData.lesson}
         </p>
       </div>
 
       {/* Units List */}
-      <div className="max-w-xl mx-auto">
+      <div className={`max-w-xl mx-auto ${nunitoSans.className}`}>
         {range(10).map((unitNumber) => {
           // The unit is considered active if it is less than or equal to the current unit.
           const unitIsActive = unitNumber <= (courseData.unit || 1);
@@ -111,13 +111,13 @@ export default function SpanishPlanPage() {
             <div key={unitNumber} className="mb-6">
               {/* Unit Icon */}
               <div
-                className={`w-16 h-16 flex items-center justify-center rounded-full cursor-pointer mx-auto shadow-lg 
+                className={`bg-[#fbdb2b] shadow-lg border-4 hover:bg-[#F3DF95] hover:cursor-pointer font-refrigerator w-75 h-21 flex items-center justify-center -skew-x-20 cursor-pointer mx-auto 
                   ${unitIsActive ? "bg-yellow-400" : "bg-gray-400"}`}
                 onClick={() =>
                   setExpandedUnit(expandedUnit === unitNumber ? null : unitNumber)
                 }
               >
-                <span className="text-xl font-bold text-white">Unit {unitNumber}</span>
+                <span className="font-bold text-[#2a323f] skew-x-20">Unit {unitNumber}</span>
               </div>
 
               {/* If this unit is expanded, show its lessons */}
@@ -144,9 +144,9 @@ export default function SpanishPlanPage() {
                     // Choose background color based on lesson state.
                     let bgColor = "bg-gray-300"; // pending
                     if (lessonState === "done") {
-                      bgColor = "bg-yellow-400";
+                      bgColor = "bg-yellow-300";
                     } else if (lessonState === "current") {
-                      bgColor = "bg-yellow-500 border-4 border-white";
+                      bgColor = "bg-yellow-400 w-22 h-22 border-4 border-white";
                     }
 
                     return (
@@ -155,12 +155,13 @@ export default function SpanishPlanPage() {
                           onClick={() =>
                             handleLessonClick(unitNumber, lessonNumber, lessonState)
                           }
-                          className={`w-16 h-16 rounded-full flex items-center justify-center text-sm font-bold text-white cursor-pointer ${bgColor}`}
+                          //className={`w-20 h-20 rounded-full flex items-center justify-center text-sm font-bold text-white cursor-pointer ${bgColor}`}
+                          className={`shadow-lg border-2 hover:bg-[#F3DF95] hover:cursor-pointer font-fridge w-20 rounded-full h-20 flex items-center justify-center cursor-pointer mx-auto ${bgColor}`}
                         >
                           <span>Lesson {lessonNumber}</span>
                         </div>
                         {lessonState === "pending" && (
-                          <span className="text-xs text-red-600 mt-1">Not unlocked yet</span>
+                          <span className="font-fridge text-red-400 mt-1">LOCKED</span>
                         )}
                       </div>
                     );
@@ -174,12 +175,9 @@ export default function SpanishPlanPage() {
 
       {/* Optional Navigation Button */}
       <div className="mt-8 text-center">
-        <Link
-          href="/learn/spanish"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-        >
-          Back to Spanish Learning
-        </Link>
+        <Button size="lg" onClick={goCourses}>
+          Back to Courses
+        </Button>
       </div>
     </div>
   );

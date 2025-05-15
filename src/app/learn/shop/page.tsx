@@ -39,9 +39,16 @@ export default function SpanishLearn() {
         SHOP
       </h1>
       </div>
-      <h1 className="py-8">You are not enrolled in any courses</h1>
-      {/* Course content goes here */}
-       <h1> {user!.firstName} </h1> 
+
+      <div className="className=relative flex flex-col items-center justify-center rounded-2xl py-8 border-8 p-10 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-[48rem]">
+      <h1>NEW: CUSTOM SKIN SLOTS!</h1> 
+
+      <p> Silver Chain: 200</p>
+      <p> Golden Chain: 400 </p>
+
+      
+      </div>
+
     </div>
   );
 }

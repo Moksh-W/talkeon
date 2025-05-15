@@ -63,7 +63,7 @@ export default function SpanishLearn() {
             />
             <div>
               <h2
-                className="font-deluxe text-2xl text-white"
+                className="font-deluxe text-2xl text-white uppercase"
                 style={{ textShadow: "0 1px 0 #fbdb2b" }}
               >
                 Spanish Course
