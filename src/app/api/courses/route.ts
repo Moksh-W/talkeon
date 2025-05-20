@@ -1,5 +1,5 @@
 "use server"
-import {registerSpanish} from "@/app/actions/registerCourse"
+import {registerSpanish} from "../../../actions/registerCourse"
 import { auth } from "@clerk/nextjs/server";
 
 export async function POST(req: Request){

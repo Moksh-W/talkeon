@@ -19,10 +19,7 @@ export default function Home() {
       </div>
       <main className="max-w-3xl text-center space-y-6 text-[1.2rem] py-8">
         <p className="text-white" style={{ textShadow: "0.9px 0 0 #fbdb2b" }}>
-        How do we give back?
-        </p>
-        <p className="text-white" style={{ textShadow: "0.9px 0 0 #fbdb2b" }}>
-          With Talkeon, our goal is to create a platform that <b><i>ACTUALLY</i></b> helps you learn a language. It is fully customizable, and it lets you learn your way. To advance to the next part of the course, you can earn points by practicing in five different skill trees: grammar, speaking, reading, writing, and listening. We have tried our best to make the process of mastering a new language easy.
+        10% of all our profits will be donated to Sarcoma Foundation. That means for every subscription, we will be donating half a dollar a month to the Sarcoma Foundation.
         </p>
       </main>
       </div>
