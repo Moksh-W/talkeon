@@ -3,9 +3,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import { courseRenderer, CourseRecord } from "@/actions/courseRenderer";
 import { updateCurrentCourse } from "@/actions/updateCurrentCourse";
+import { Nunito_Sans } from "next/font/google";
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+});
 
 // Helper: Generate an array [1,2,...,n]
 const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
@@ -17,6 +23,9 @@ export default function SpanishPlanPage() {
   // expandedUnit: If a unit is clicked, it is stored here (number 1–10); otherwise null.
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
+  async function goCourses(){
+    router.push('/learn/courses')
+  }
 
   // ---------------------------------------------------------------------
   // 1. Get the user's current course progress from the database.

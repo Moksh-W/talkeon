@@ -39,6 +39,35 @@ export default function SpanishLearn() {
         SHOP
       </h1>
       </div>
+      <div className="relative flex flex-col items-center h-20 justify-center m-6 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-full">
+      <h1 className="font-deluxe text-[#ffffff] text-4xl" style={{ textShadow: "0 2px 0 #fbdb2b" }}>
+        SUBSCRIPTIONS
+      </h1>
+      </div>
+
+      <div className={`"className=relative flex flex-col items-center justify-center rounded-2xl py-8 border-8 p-10 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-[48rem] text-white ${nunitoSans.className}`}>
+      <h1 className='font-refrig' style={{ textShadow: "0 2px 0 #fbdb2b" }}> Basic Subscription + Offered Courses</h1> 
+      <p style={{ textShadow: "0 0.9px 0 #fbdb2b" }}> for</p>
+      <p className="font-refrig" style={{ textShadow: "0 2px 0 #fbdb2b" }}> $4.99/month</p>
+      <p> Benifits of the tier: </p>
+      <ul> 
+        <li> - AI conversations</li> 
+        <li> - Speech Recognition </li>
+        
+      </ul>
+
+
+
+      
+      </div>
+      <div className="className=relative flex flex-col items-center justify-center rounded-2xl py-8 border-8 p-10 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-[48rem]">
+      <h1 className="">NEW: CUSTOM SKIN SLOTS!</h1> 
+
+      <p> Silver Chain: 200</p>
+      <p> Golden Chain: 400 </p>
+
+      
+      </div>
 
       <div className="className=relative flex flex-col items-center justify-center rounded-2xl py-8 border-8 p-10 bg-[url('/back.png')] bg-repeat-x bg-auto bg-left w-[48rem]">
       <h1>NEW: CUSTOM SKIN SLOTS!</h1> 

@@ -45,3 +45,10 @@ export const lessons = pgTable("lessons", {
   type: text("type"),
   content: text("content"),
 })
+
+export const images = pgTable("images", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  clerkId: text("clerkId").notNull(),
+  base64: text("base_64")
+
+})
